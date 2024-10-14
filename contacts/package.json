@@ -3,10 +3,8 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-  "start": "cross-env NODE_ENV=production node ./bin/www",
-  "dev": "cross-env NODE_ENV=development nodemon ./bin/www"
-}
-,
+    "start": "if [[ $NODE_ENV == 'production' ]]; then node ./bin/www; else nodemon ./bin/www; fi"
+  },
   "dependencies": {
     "connect-flash": "0.1.1",
     "cookie-parser": "1.4.5",
